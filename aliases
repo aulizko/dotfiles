@@ -1,6 +1,6 @@
-alias reload='. ~/.bashrc'
-alias ea="$EDITOR ~/bin/dotfiles/bash/aliases && reload"
-alias ee="$EDITOR ~/bin/dotfiles/bash/env && reload"
+alias reload='. ~/.zshrc'
+alias ea="$EDITOR ~/bin/dotfiles/zsh/aliases && reload"
+alias ee="$EDITOR ~/bin/dotfiles/zsh/env && reload"
 
 # Processes
 alias top='top -o cpu'
