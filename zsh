@@ -7,6 +7,7 @@ antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle common-aliases
 antigen bundle rupa/z
+antigen bundle colored-man
 # Guess what to install when running an unknown command.
 antigen bundle command-not-found
 # ZSH port of Fish shell's history search feature.
