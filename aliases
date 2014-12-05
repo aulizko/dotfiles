@@ -56,9 +56,6 @@ alias mstart="mongod --config /usr/local/etc/mongod.conf"
 # mysql
 alias mystart='mysql.server start'
 alias mystop='mysql.server stop'
-# postgres
-alias psgstart='pg_ctl -D /Users/aulizko/.homebrew/var/postgres -l /Users/aulizko/.homebrew/var/postgres/server.log start'
-alias psgstop='pg_ctl -D /Users/aulizko/.homebrew/var/postgres stop -s -m fast'
 # memcached
 alias memstart='/usr/local/opt/memcached/bin/memcached -d'
 
