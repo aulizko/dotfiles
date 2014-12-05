@@ -1,0 +1,72 @@
+alias reload='. ~/.bashrc'
+alias ea="$EDITOR ~/bin/dotfiles/bash/aliases && reload"
+alias ee="$EDITOR ~/bin/dotfiles/bash/env && reload"
+
+# Processes
+alias top='top -o cpu'
+
+# General
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+
+alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
+alias ll='ls -hl'
+alias la='ls -a'
+alias lla='ls -lah'
+
+alias g='grep -i'  # Case insensitive grep
+alias f='find . -iname'
+alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+
+
+alias systail='tail -f /var/log/system.log'
+alias m='more'
+alias df='df -h'
+alias vi='vim'
+
+# Is running smth.
+alias isr="ps aux | grep -v grep | grep"
+
+# Shows http dump for airport utility
+alias httpdump='sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"'
+
+# Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+# Git
+alias gst='git status' 
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git pull && git push'
+alias gull='git pull'
+alias gush='git push'
+alias gb='git branch'
+alias gco='git checkout'
+alias gd='git diff'
+alias grm='git ls-files --deleted | xargs git rm'
+alias gitreadme='git add README.md; git commit -m "udpating readme"; git push'
+
+# Git-svn
+alias gsr="git svn rebase"
+alias gsc="git svn dcommit"
+
+# Databases:
+# mongo
+alias mstart="mongod --config /usr/local/etc/mongod.conf"
+# mysql
+alias mystart='mysql.server start'
+alias mystop='mysql.server stop'
+# postgres
+alias psgstart='pg_ctl -D /Users/aulizko/.homebrew/var/postgres -l /Users/aulizko/.homebrew/var/postgres/server.log start'
+alias psgstop='pg_ctl -D /Users/aulizko/.homebrew/var/postgres stop -s -m fast'
+# memcached
+alias memstart='/usr/local/opt/memcached/bin/memcached -d'
+
+# RUBY 
+alias irb='irb --readline -r irb/completion -rubygems' 
+
+# NPM
+alias npmpatch='npm version patch;npm publish;git push;git push --tags'
+
+# Print a ASCII tree of the current directory without .git subdirectory
+alias asctree="tree -L 2 -C -a -I '.git'"
