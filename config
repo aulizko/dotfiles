@@ -4,9 +4,3 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 export HISTCONTROL=ignoredups
-shopt -s checkwinsize # After each command, checks the windows size and changes lines and columns
-
-# bash completion settings (actually, these are readline settings)
-bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
-bind "set bell-style none" # no bell
-bind "set show-all-if-ambiguous On" # show list automatically, without double tab
