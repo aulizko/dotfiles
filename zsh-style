@@ -1,0 +1,34 @@
+#!/bin/zsh
+# Force rehash when command not found
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+  return 1
+}
+
+export LSCOLORS='exfxcxdxbxegedabagacad'
+export CLICOLOR=true
+
+# share history between sessions ???
+setopt SHARE_HISTORY
+# add timestamps to history
+setopt EXTENDED_HISTORY
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+# extended globbing, awesome!
+setopt extendedGlob
+# Turn on command substitution in the prompt (and parameter expansion and arithmetic expansion).
+setopt promptsubst
+
+# Use emacs key bindings
+bindkey -e
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
