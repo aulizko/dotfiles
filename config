@@ -1,6 +1,2 @@
 # to stop Finder writing .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-# highlight grep output
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-
-export HISTCONTROL=ignoredups

@@ -1,3 +1,5 @@
+alias mmv='noglob zmv -W'
+
 alias reload='. ~/.zshrc'
 alias ea="$EDITOR ~/bin/dotfiles/zsh/aliases && reload"
 alias ee="$EDITOR ~/bin/dotfiles/zsh/env && reload"
@@ -6,23 +8,15 @@ alias ee="$EDITOR ~/bin/dotfiles/zsh/env && reload"
 alias top='top -o cpu'
 
 # General
-alias ..='cd ..'
-alias ...='cd .. ; cd ..'
-
-alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
-alias ll='ls -hl'
-alias la='ls -a'
-alias lla='ls -lah'
-
-alias g='grep -i'  # Case insensitive grep
-alias f='find . -iname'
 alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
 
 
 alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
+alias vim="nvim"
 alias vi='vim'
+
 
 # Is running smth.
 alias isr="ps aux | grep -v grep | grep"

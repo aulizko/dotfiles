@@ -1,35 +1,38 @@
-source ~/bin/dotfiles/antigen.zsh
-
-antigen use oh-my-zsh
+source ~/Documents/projects/bash/antibody_darwin_amd64/antibody.zsh
 
 # general bundles
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle common-aliases
-antigen bundle rupa/z
-antigen bundle colored-man
+antibody bundle zsh-users/zsh-syntax-highlighting
+antibody bundle common-aliases
+antibody bundle rupa/z
+antibody bundle colored-man
+antibody bundle colorize
+antibody bundle zsh-users/zsh-completions
+antibody bundle djui/alias-tips
 # Guess what to install when running an unknown command.
-antigen bundle command-not-found
+antibody bundle command-not-found
 # ZSH port of Fish shell's history search feature.
-antigen bundle zsh-users/zsh-history-substring-search
+antibody bundle zsh-users/zsh-history-substring-search
 # Git
-antigen bundle git
+antibody bundle git
+antibody bundle git-extras
 # Docker
-antigen bundle docker
+antibody bundle docker
 # Node-related
-antigen bundle node
-antigen bundle bower
-antigen bundle npm
-antigen bundle nvm
+antibody bundle node
+antibody bundle bower
+antibody bundle npm
+antibody bundle nvm
 
 
 # os-specific
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    antigen bundle brew
-    antigen bundle brew-cask
-    antigen bundle osx
+    antibody bundle brew
+    antibody bundle brew-cask
+    antibody bundle osx
 fi
 
-antigen theme sorin
+antibody apply
 
-antigen apply
+# zmv looks useful: http://strcat.de/zsh/#zmv
+autoload -U zmv
