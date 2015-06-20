@@ -15,7 +15,7 @@ setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
-setopt IGNORE_EOF
+# setopt IGNORE_EOF
 # extended globbing, awesome!
 setopt extendedGlob
 # Turn on command substitution in the prompt (and parameter expansion and arithmetic expansion).

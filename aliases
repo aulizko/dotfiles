@@ -61,3 +61,10 @@ alias npmpatch='npm version patch;npm publish;git push;git push --tags'
 
 # Print a ASCII tree of the current directory without .git subdirectory
 alias asctree="tree -L 2 -C -a -I '.git'"
+
+# Docker helper scripts
+alias d-last="docker-last"
+alias d-container-volumes="docker-container-volumes"
+alias d-delete-stopped-containers="docker-delete-stopped-containers"
+alias d-purge-unnamed-images="docker-purge-unnamed-images"
+alias d-superclean="docker-superclean"
