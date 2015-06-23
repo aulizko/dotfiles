@@ -25,3 +25,6 @@ export PHANTOMJS_BIN="/usr/local/bin/phantomjs"
 
 export HOMEBREW_GITHUB_API_TOKEN=77b1af34aacac3a06c471b39506a26dc90cba65a 
 
+# Go
+
+export GOPATH=/Users/aulizko/Documents/projects/go
