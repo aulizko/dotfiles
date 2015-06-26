@@ -68,3 +68,6 @@ alias d-container-volumes="docker-container-volumes"
 alias d-delete-stopped-containers="docker-delete-stopped-containers"
 alias d-purge-unnamed-images="docker-purge-unnamed-images"
 alias d-superclean="docker-superclean"
+
+# Run interactive IO.js shell in isolated docker environment
+alias iio="docker run -it --rm --name iojs mhart/alpine-iojs node"
