@@ -5,8 +5,9 @@ _force_rehash() {
   return 1
 }
 
-export LSCOLORS='exfxcxdxbxegedabagacad'
 export CLICOLOR=true
+export LSCOLORS='exfxcxdxbxegedabagacad'
+# export LSCOLORS='ExFxBxDxCxegedabagacad'
 
 # share history between sessions ???
 setopt SHARE_HISTORY
