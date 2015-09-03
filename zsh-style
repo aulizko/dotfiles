@@ -9,6 +9,9 @@ export CLICOLOR=true
 export LSCOLORS='exfxcxdxbxegedabagacad'
 # export LSCOLORS='ExFxBxDxCxegedabagacad'
 
+zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:*:*' color 'yes'
+
 # share history between sessions ???
 setopt SHARE_HISTORY
 # add timestamps to history
@@ -25,3 +28,4 @@ setopt promptsubst
 # Use emacs key bindings
 bindkey -e
 
+autoload colors && colors
