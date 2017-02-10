@@ -1,0 +1,18 @@
+# Radio
+alias radio-celtic="mplayer -playlist http://www.radcap.ru/play/rc3/radio+caprice-celtic.pls </dev/null >/dev/null 2>&1 &"
+alias radio-folk="mplayer -playlist http://folkradio.co.uk/listen-main/listen.pls  </dev/null >/dev/null 2>&1 &"
+alias radio-sleep="mplayer -playlist http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls </dev/null >/dev/null 2>&1 &" # Sleepbot Environmental Broadcast 56K MP3
+alias radio-ambient="mplayer http://listen.radionomy.com/PARTYVIBERADIO-PsychedelicTrance-Progressive-GoaTrance </dev/null >/dev/null 2>&1 &"
+alias radio-alternative="mplayer http://198.100.125.242:80 </dev/null >/dev/null 2>&1 &"
+alias radio-country="mplayer http://50.7.68.251:8708 </dev/null >/dev/null 2>&1 &"
+alias radio-classical="mplayer http://109.123.116.202:8010/stream </dev/null >/dev/null 2>&1 &"
+alias radio-lush="mplayer -playlist http://somafm.com/lush130.pls </dev/null >/dev/null 2>&1 &" # Soma FM Lush iTunes AAC 128K
+alias radio-sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls </dev/null >/dev/null 2>&1 &" # Soma FM Sonic Universe iTunes AAC 128K
+alias radio-dubstep="mplayer http://148.251.91.15:7004 </dev/null >/dev/null 2>&1 &"
+alias radio-dubstep-alternative="mplayer http://72.13.86.6:80/256aac </dev/null >/dev/null 2>&1 &"
+alias radio-dub="mplayer http://95.141.24.130:80 </dev/null >/dev/null 2>&1 &"
+alias radio-dnb="mplayer http://50.7.129.122:8000 </dev/null >/dev/null 2>&1 &"
+alias radio-progmet="mplayer http://91.121.82.33:14676 </dev/null >/dev/null 2>&1 &"
+alias radio-piano="mplayer http://192.152.23.242:8050 </dev/null >/dev/null 2>&1 &"
+alias radio-meditation="mplayer http://85.25.190.14:9050 </dev/null >/dev/null 2>&1 &"
+

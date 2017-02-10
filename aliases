@@ -1,8 +1,8 @@
 alias mmv='noglob zmv -W'
 alias DOTFILES_FOLDER='~/Documents/projects/scripts/dotfiles'
 alias reload='. ~/.zshrc'
-alias ea="$EDITOR $DOTFILES_FOLDER/zsh/aliases && reload"
-alias ee="$EDITOR $DOTFILES_FOLDER/zsh/env && reload"
+alias ea="$EDITOR $DOTFILES_FOLDER/aliases && reload"
+alias ee="$EDITOR $DOTFILES_FOLDER/env && reload"
 
 # Processes
 alias top='top -o cpu'
@@ -14,9 +14,8 @@ alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in 
 alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
-alias vim="nvim"
 alias vi='vim'
-
+alias em='emacs'
 
 # Is running smth.
 alias isr="ps aux | grep -v grep | grep"
@@ -105,3 +104,8 @@ alias d-superclean="docker-superclean"
 
 # Run interactive IO.js shell in isolated docker environment
 alias iio="docker run -it --rm --name iojs mhart/alpine-iojs node"
+
+# Correct wrong typed command
+eval "$(thefuck --alias)"
+
+alias lla="ls -lah"
