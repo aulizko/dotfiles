@@ -5,12 +5,11 @@ if ! zgen saved; then
     echo "Creating a zgen save"
 
     zgen loadall <<EOPLUGINS
-      djui/alias-tips
-      zsh-users/zsh-completions
+	          djui/alias-tips
+	          zsh-users/zsh-completions
 		  zsh-users/zsh-syntax-highlighting
 		  zsh-users/zsh-history-substring-search
-      tarruda/zsh-autosuggestions
-		  marzocchi/zsh-notify
+	          tarruda/zsh-autosuggestions
 		  unixorn/docker-helpers.zshplugin
       b4b4r07/enhancd
       rimraf/k
@@ -26,6 +25,9 @@ source ~/Documents/projects/scripts/z/z.sh
 precmd() {
     _z --add "$(pwd -P)"
 }
+
+# zsh installed by brew
+fpath=("/usr/local/share/zsh/site-functions" $fpath)
 
 # pass autocompletion
 fpath=("${HOME}/Documents/projects/scripts/dotfiles/pass" $fpath)

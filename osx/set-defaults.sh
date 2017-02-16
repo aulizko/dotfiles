@@ -32,7 +32,7 @@ for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
 done
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \	
+	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to green
@@ -48,6 +48,9 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
 # Disable smooth scrolling
 # (Uncomment if you’re on an older Mac that messes up the animation)
 defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+
+# showing a toolbar or menu bar in full screen
+defaults write -g NSToolbarFullScreenAnimationDuration -float 0
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
