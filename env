@@ -18,7 +18,7 @@ export JAVA5_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home
 export DISPLAY=:0.0
 
 # Textmate:
-export EDITOR='mate'
+export EDITOR='emacsclient -q'
 
 # Bash history
 export HISTCONTROL=erasedups

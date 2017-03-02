@@ -6,5 +6,5 @@ source private
 source config
 source functions
 source aliases
-
-
+source fzf
+source history
