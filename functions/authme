@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Usage: authme user@host
+# Description: appends your key to a server's authorized keys file
+authme {
+	ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
+}

@@ -1,0 +1,9 @@
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+
+POWERLEVEL9K_MODE='nerdfont-fontconfig'

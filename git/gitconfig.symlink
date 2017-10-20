@@ -1,0 +1,34 @@
+[user]
+	name = Alexander Ulizko
+	email = alexander@ulizko.com
+  signingkey = EB3A94388DFF1A2C
+[credential]
+	helper = cache
+[core]
+  excludesfile = ~/.gitignore_global
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[apply]
+  whitespace = nowarn
+[alias]
+  df = difftool --dir-diff
+	mt = mergetool -t meld
+[diff]
+  tool = meld
+[difftool "meld"]
+  cmd = meld $LOCAL $REMOTE
+[merge]
+  tool = meld
+[mergetool "meld"]
+  prompt = false
+  keepBackup = true
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output="$MERGED"
+[help]
+	autocorrect = 1
+[gpg]
+	program = gpg
+[push]
+	default = simple

@@ -1,0 +1,153 @@
+#!/bin/sh
+#
+# Usage: radio [genre]
+# Description: Make mpd play shoutcast station with specified genre
+radio () {
+    case $1 in
+        lush)
+            echo "Playing Lush [SomaFM]"
+            mpc clear
+            mpc add http://ice1.somafm.com/lush-128-aac
+            mpc play
+            ;;
+        celtic)
+            echo "Playing CALM RADIO - CELTIC - Sampler"
+            mpc clear
+            mpc add http://184.173.142.117:3028/stream
+            mpc play
+            ;;
+        irish)
+            echo "Playing All Irish Radio"
+            mpc clear
+            mpc add http://192.99.62.212:20142/stream
+            mpc play
+            ;;
+        highlander)
+            echo "Playing Highlander Radio"
+            mpc clear
+            mpc add http://50.7.71.27:9657
+            mpc play
+            ;;
+        folk)
+            echo "Playing The Acoustics House"
+            mpc clear
+            mpc add http://192.235.87.105:14764
+            mpc play
+            ;;
+        blues)
+            echo "Playing .113FM Big Kickin' Country"
+            mpc clear
+            mpc add http://listen.shoutcast.com/113fmbigkickin-country
+            mpc play
+            ;;
+        chinese)
+            echo "Playing Chinese Classical Music"
+            mpc clear
+            mpc add http://208.110.70.66:8202
+            mpc play
+            ;;
+        sleep)
+            echo "Playing Sleepbot Environmental Broadcast"
+            mpc clear
+            mpc add http://sc13.shoutcaststreaming.us:8194
+            mpc play
+            ;;
+        goa)
+            echo "Playing PartyVibeRadio - GoaTrance"
+            mpc clear
+            mpc add http://listen.radionomy.com/PARTYVIBERADIO-PsychedelicTrance-Progressive-GoaTrance
+            mpc play
+            ;;
+        alternative)
+            echo "Playing idobi Radio: New. Music. Unfiltered. idobi.com"
+            mpc clear
+            mpc add http://198.100.125.242:80
+            mpc play
+            ;;
+        classic)
+            echo "Playing Venice Classic Radio Italia"
+            mpc clear
+            mpc add http://109.123.116.202:8010/stream
+            mpc play
+            ;;
+        country)
+            echo "Playing HPR1: Traditional Classic Country from Heartland Public Radio"
+            mpc clear
+            mpc add http://50.7.68.251:8708
+            mpc play
+            ;;
+        dub)
+            echo "Playing ~ DnBSection - Austrian DnB and Dubstyle WebRadio - MusicBase.FM"
+            mpc clear
+            mpc add http://89.31.134.105:96
+            mpc play
+            ;;
+        dnb)
+            echo "Playing Bassdrive - Worldwide Drum and Bass Radio"
+            mpc clear
+            mpc add http://50.7.129.122:8000
+            mpc play
+            ;;
+        piano)
+            echo "Playing GotRadio - Piano Perfect"
+            mpc clear
+            mpc add http://192.152.23.242:8050
+            mpc play
+            ;;
+        reggae)
+            echo "Playing iAlohaRadio.com"
+            mpc clear
+            mpc add http://206.190.136.212:9196/Live
+            mpc play
+            ;;
+        meditation)
+            echo "Playing Positively Successful"
+            mpc clear
+            mpc add http://198.178.121.76:8432/stream
+            mpc play
+            ;;
+        nature)
+            echo "Playing Ambi Nature Radio (Sleep, Relaxation"
+            mpc clear
+            mpc add http://94.23.252.14:8067/stream
+            mpc play
+            ;;
+        binaural)
+            echo "Playing Positively Ocean"
+            mpc clear
+            mpc add http://198.178.121.76:8318/stream
+            mpc play
+            ;;
+        ambient)
+            echo "Playing PARTY VIBE RADIO : AMBIENT  +  CHILLOUT  +  RELAXATION"
+            mpc clear
+            mpc add http://107.182.233.214:8056/stream
+            mpc play
+            ;;
+        *)
+            cat <<EOF
+Usage: radio [genre]
+Available genres are:
+-- ambient
+-- alternative
+-- binaural
+-- blues
+-- chinese
+-- classic
+-- country
+-- dnb
+-- dub
+-- folk
+-- goa
+-- highlander
+-- irish
+-- lush
+-- meditation
+-- nature
+-- piano
+-- reggae
+-- sleep
+EOF
+            ;;
+    esac
+}

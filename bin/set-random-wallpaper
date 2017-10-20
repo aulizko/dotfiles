@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+PATH_TO_FOLDER=$HOME/Documents/wallpapers/converted/
+
+FILES=(${PATH_TO_FOLDER}*.png)
+RANDOM_WALLPAPER=$FILES[$RANDOM%$#FILES+1]
+
+feh --bg-scale $RANDOM_WALLPAPER
+

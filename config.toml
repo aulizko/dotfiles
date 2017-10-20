@@ -1,0 +1,103 @@
+# Config file for Homemaker
+# https://foosoft.net/projects/homemaker/
+
+#
+# macros
+#
+
+[macros.clone]
+  deps = ["git"]
+  prefix = ["git", "clone"]
+
+[macros.install]
+  prefix = ["sudo", "pacman", "-S", "--noconfirm"]
+
+[macros.go-get]
+  deps = ["golang"]
+  prefix = ["go", "get"]
+
+[macros.npm-install]
+  deps = ["node"]
+  prefix = ["sudo", "npm", "install", "-g"]
+
+#
+# development
+#
+
+[tasks.dev]
+  deps = ["golang", "git", "vim", "node"]
+  cmds = [
+    ["@install", "cmake", "tmux"],
+  ]
+
+[tasks.git]
+  cmds = [["@install", "git"]]
+  links = [
+    ["${HM_DEST}/.gitconfig", "git/gitconfig.symlink"],
+    ["${HM_DEST}/.gitattributes", "git/gitattributes.symlink"],
+    ["${HM_DEST}/.gitignore_global", "git/gitignore_global.symlink"],
+  ]
+
+[tasks.golang]
+  envs = [["GOPATH", "${HM_DEST}/projects/go"]]
+  cmds = [["mkdir", "-p", "$GOPATH"], ["@install", "golang"]]
+
+[tasks.node]
+  cmds = [["@install", "nodejs", "npm"]]
+  links = [
+    ["${HM_DEST}/.eslintrc.json", "node/eslintrc.json.symlink"],
+  ]
+
+[tasks.vim]
+  deps = ["vimrc"]
+  cmds = [["@install", "neovim"]]
+
+[tasks.vimrc]
+  links = [
+    ["${HM_DEST}/.config/nvim/init.vim", "vim/init.vim"],
+  ]
+
+[tasks.linux]
+  # TODO: reject if OSX
+  cmds = [
+           [
+             "@install",
+             "xdg-open",
+             "i3-gaps-git",
+             "xorg-xinit",
+             "xorg-server",
+             "thunar",
+           ],
+         ]
+
+[tasks.ag]
+  cmds = [["@install", "the_silver_searcher"]]
+  links = [
+    ["${HM_DEST}/.agignore", "ag/agignore.symlink"]
+  ]
+
+[tasks.jump]
+  deps = ["golang"]
+  cmds = [["@go-get", "github.com/gsamokovarov/jump"]]
+
+[tasks.zsh]
+  deps = ["jump"]
+  links = [
+    ["${HM_DEST}/.zshrc", "zsh/zshrc.symlink"]
+  ]
+
+[tasks.tmux]
+  links = [
+    ["${HM_DEST}/.tmux.conf", "tmux/tmux.conf"],
+    ["${HM_DEST}/.tmux/plugins", "tmux/plugins"],
+  ]
+
+
+[tasks.compton]
+  links = [["${HM_DEST}/.config/compton/config", "compton/config"]]
+
+# TODO: ruby, rust
+# TODO: add reject-if to linux/mac specific components
+
+[tasks.default]
+  deps = ["dev", "tmux", "ag", "vim", "zsh"]

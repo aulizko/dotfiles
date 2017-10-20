@@ -7,7 +7,8 @@
 # Examples
 #
 #   git nuke add-git-nuke
-# (Taken from Holman's dotfiles)
+#
+# Credit: https://github.com/holman/dotfiles/blob/master/bin/git-nuke
 
 git branch -D $1
 git push origin :$1

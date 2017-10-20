@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Usage: unslow_port [port_number] (default 80)
+# Description: does the opposite to `slow_port` function
+unslow_port {
+  sudo ipfw delete 1
+  echo "Port succesfully un-slowed."
+}
