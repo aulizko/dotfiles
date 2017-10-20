@@ -1,7 +1,7 @@
 # Keybindings and related stuff
 
 # FZF
-source /usr/share/fzf/key-bindings.zsh
+source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 # Use emacs key bindings
 bindkey -e

@@ -70,4 +70,4 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
        usbmux uucp vcsa wwwrun xfs '_*'
 
 # FZF
-source /usr/share/fzf/completion.zsh
+source /usr/local/opt/fzf/shell/completion.zsh
