@@ -8,6 +8,6 @@ export PATH="./bin:$ZSH/bin:$PATH"
 
 export PATH="$PATH:~/Applications/WebStorm/bin"
 
-export EDITOR="emacsclient --create-frame"
+export EDITOR="mate -w"
 
 export VISUAL="e"
