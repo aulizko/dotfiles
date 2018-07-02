@@ -21,6 +21,9 @@ setopt COMPLETE_ALIASES
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 export COMPLETION_WAITING_DOTS="true"
 
+# https://github.com/b4b4r07/enhancd
+export ENHANCD_FILTER=fzf
+
 # Use zmv, which is amazing
 autoload -U zmv
 alias zmv="noglob zmv -W"
