@@ -1,7 +1,6 @@
-source /usr/local/Cellar/zplug/2.4.1/init.zsh
+source /usr/local/Cellar/zplug/2.4.2/init.zsh
 
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug "djui/alias-tips"
+zplug "jedahan/ripz"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"

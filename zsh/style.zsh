@@ -1,7 +1,11 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
-POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+RIPZ_TEXT=💡
+
+BRONZE=(status:black:white dir:blue:black git:green:black cmdtime:yellow:black)
+export BRONZE_DIR_LENGTH=5
+export BRONZE_CMDTIME_THRESHOLD=1s
+export BRONZE_SHELL=zsh
+
+eval "$(bronze init)"
