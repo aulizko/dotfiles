@@ -10,7 +10,10 @@
   prefix = ["git", "clone"]
 
 [macros.install]
-  prefix = ["sudo", "pacman", "-S", "--noconfirm"]
+  prefix = ["brew", "install"]
+
+[macros.install-cask]
+  prefix = ["brew", "cask", "install"]
 
 [macros.go-get]
   deps = ["golang"]
@@ -57,18 +60,11 @@
     ["${HM_DEST}/.config/nvim/init.vim", "vim/init.vim"],
   ]
 
-[tasks.linux]
-  # TODO: reject if OSX
-  cmds = [
-           [
-             "@install",
-             "xdg-open",
-             "i3-gaps-git",
-             "xorg-xinit",
-             "xorg-server",
-             "thunar",
-           ],
-         ]
+[tasks.alacritty]
+  cmds = [["@install-cask", "alacritty"]]
+  links = [
+    ["${HM_DEST}/.config/alacritty/alacritty.yml", "alacritty/alacritty.yml"]
+  ]
 
 [tasks.ag]
   cmds = [["@install", "the_silver_searcher"]]
@@ -87,17 +83,13 @@
   ]
 
 [tasks.tmux]
+  deps = [["@install", "tmux"]]
   links = [
     ["${HM_DEST}/.tmux.conf", "tmux/tmux.conf"],
     ["${HM_DEST}/.tmux/plugins", "tmux/plugins"],
   ]
 
-
-[tasks.compton]
-  links = [["${HM_DEST}/.config/compton/config", "compton/config"]]
-
 # TODO: ruby, rust
-# TODO: add reject-if to linux/mac specific components
 
 [tasks.default]
-  deps = ["dev", "tmux", "ag", "vim", "zsh"]
+  deps = ["dev", "tmux", "ag", "vim", "zsh", "alacritty"]
