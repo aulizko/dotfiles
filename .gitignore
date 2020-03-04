@@ -1,1 +1,4 @@
 zsh/private.zsh
+
+*.private
+

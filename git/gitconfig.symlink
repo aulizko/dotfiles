@@ -3,7 +3,7 @@
 	email = alexander@ulizko.com
   signingkey = EB3A94388DFF1A2C
 [credential]
-	helper = cache
+	helper = osxkeychain
 [core]
   excludesfile = ~/.gitignore_global
 [color]
@@ -16,12 +16,6 @@
 [alias]
   df = difftool --dir-diff
 	mt = mergetool -t meld
-[diff]
-  tool = meld
-[difftool "meld"]
-  cmd = meld $LOCAL $REMOTE
-[merge]
-  tool = meld
 [mergetool "meld"]
   prompt = false
   keepBackup = true
@@ -32,3 +26,6 @@
 	program = gpg
 [push]
 	default = simple
+[include]
+  path = ~/.dotfiles/git/gitconfig.private
+

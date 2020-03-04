@@ -63,6 +63,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+*.cov
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -176,9 +177,6 @@ dist/
 # Flycheck
 flycheck_*.el
 
-# server auth directory
-/server/
-
 # projectiles files
 .projectile
 
@@ -209,3 +207,11 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

@@ -8,6 +8,8 @@ export PATH="./bin:$ZSH/bin:$PATH"
 
 export PATH="$PATH:~/Applications/WebStorm/bin"
 
+export PATH="/usr/local/sbin:$PATH"
+
 export EDITOR="mate -w"
 
 export VISUAL="e"
