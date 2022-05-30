@@ -1,7 +1,6 @@
 [user]
 	name = Alexander Ulizko
 	email = alexander@ulizko.com
-  signingkey = EB3A94388DFF1A2C
 [credential]
 	helper = osxkeychain
 [core]
@@ -13,19 +12,26 @@
 	ui = true
 [apply]
   whitespace = nowarn
-[alias]
-  df = difftool --dir-diff
-	mt = mergetool -t meld
-[mergetool "meld"]
-  prompt = false
-  keepBackup = true
-  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output="$MERGED"
 [help]
 	autocorrect = 1
 [gpg]
 	program = gpg
 [push]
 	default = simple
+[pager]
+    diff = delta
+    show = delta
+[delta]
+    syntax-theme = base16
+[interactive]
+    diffFilter = delta --color-onlly
 [include]
   path = ~/.dotfiles/git/gitconfig.private
-
+[log]
+    date = relative
+[init]
+    defaultBranch = master
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
