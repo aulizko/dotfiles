@@ -1,4 +1,5 @@
 zsh/private.zsh
+go/private.zsh
 
 *.private
 
