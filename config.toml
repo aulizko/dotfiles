@@ -89,7 +89,11 @@
     ["${HM_DEST}/.tmux/plugins", "tmux/plugins"],
   ]
 
+[tasks.topgrade]
+  deps = [["@install", "topgrade"]]
+
+
 # TODO: ruby, rust
 
 [tasks.default]
-  deps = ["dev", "tmux", "ag", "vim", "zsh", "alacritty"]
+  deps = ["dev", "tmux", "ag", "vim", "zsh", "alacritty", "topgrade"]
