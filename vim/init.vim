@@ -2,7 +2,7 @@
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin()
 " GUI
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
