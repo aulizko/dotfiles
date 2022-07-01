@@ -124,6 +124,11 @@ radio () {
             mpc add http://107.182.233.214:8056/stream
             mpc play
             ;;
+        stop)
+            echo "Time for silence"
+            mpc stop
+            mpc clear
+            ;;
         *)
             cat <<EOF
 Usage: radio [genre]
@@ -147,6 +152,7 @@ Available genres are:
 -- piano
 -- reggae
 -- sleep
+Also, you can stop playing with command "stop"
 EOF
             ;;
     esac
