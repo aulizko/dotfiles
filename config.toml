@@ -73,8 +73,7 @@
   ]
 
 [tasks.jump]
-  deps = ["golang"]
-  cmds = [["@go-get", "github.com/gsamokovarov/jump"]]
+  cmds = [["@install", "zoxide"]]
 
 [tasks.zsh]
   deps = ["jump"]

@@ -4,11 +4,12 @@ alias please="sudo"
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-# Let's try jump https://github.com/gsamokovarov/jump
-eval "$(jump shell)"
-
 # Lists folders and files sizes in the current folder
 alias ducks='du -cksh * | sort -rn|head -11'
+
+# From https://github.com/ajeetdsouza/zoxide/
+eval "$(zoxide init zsh)"
+alias j = "z"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
