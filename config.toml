@@ -75,7 +75,7 @@
 [tasks.jump]
   cmds = [["@install", "zoxide"]]
 
-[tasks.zsh]
+[tasks.shell]
   deps = ["jump"]
   links = [
     ["${HM_DEST}/.zshrc", "zsh/zshrc.symlink"]
@@ -92,7 +92,5 @@
   deps = [["@install", "topgrade"]]
 
 
-# TODO: ruby, rust
-
 [tasks.default]
-  deps = ["dev", "tmux", "ag", "vim", "zsh", "alacritty", "topgrade"]
+  deps = ["dev", "tmux", "ag", "vim", "shell", "alacritty", "topgrade"]
