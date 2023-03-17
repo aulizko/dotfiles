@@ -23,15 +23,24 @@
   deps = ["node"]
   prefix = ["sudo", "npm", "install", "-g"]
 
+[macros.mkdirp]
+  prefix = ["mkdir", "-p"]
+
 #
 # development
 #
 
 [tasks.dev]
-  deps = ["golang", "git", "vim", "node"]
+  deps = ["golang", "git", "vim", "node", "openjdk", "sqlite"]
   cmds = [
     ["@install", "cmake", "tmux"],
   ]
+
+[tasks.sqlite]
+  cmds = [["@install", "sqlite"]]
+  links = [
+  ["${HM_DEST}/.config/fish/conf.d/sqlite.fish", "sqlite/sqlite.conf.fish"]
+]
 
 [tasks.git]
   cmds = [["@install", "git"]]
@@ -39,11 +48,22 @@
     ["${HM_DEST}/.gitconfig", "git/gitconfig.symlink"],
     ["${HM_DEST}/.gitattributes", "git/gitattributes.symlink"],
     ["${HM_DEST}/.gitignore_global", "git/gitignore_global.symlink"],
+    ["${HM_DEST}/.config/fish/functions/", "git/fish/*.fish"]
   ]
 
 [tasks.golang]
   envs = [["GOPATH", "${HM_DEST}/projects/go"]]
   cmds = [["mkdir", "-p", "$GOPATH"], ["@install", "golang"]]
+  links = [
+    ["${HM_DEST}/.config/fish/conf.d/golang.fish", "go/golang.conf.fish"],
+    ["${HM_DEST}/.config/fish/conf.d/golang_private.fish", "go/golang_private.conf.fish"]
+  ]
+
+[tasks.openjdk]
+  cmds = [["@install", "openjdk"]]
+  links = [
+  ["${HM_DEST}/.config/fish/conf.d/openjdk.fish", "java/openjdk.fish"]
+]
 
 [tasks.node]
   cmds = [["@install", "nodejs", "npm"]]
@@ -56,14 +76,26 @@
   cmds = [["@install", "neovim"]]
 
 [tasks.vimrc]
+  cmds = [["@mkdirp", "${HM_DEST}/.config/nvim"]]
   links = [
     ["${HM_DEST}/.config/nvim/init.vim", "vim/init.vim"],
+    ["${HM_DEST}/.config/fish/functions/", "vim/*.fish"]
   ]
 
 [tasks.alacritty]
-  cmds = [["@install-cask", "alacritty"]]
+  cmds = [["@install-cask", "alacritty"], ["@mkdirp", "${HM_DEST}/.config/alacritty"]]
   links = [
     ["${HM_DEST}/.config/alacritty/alacritty.yml", "alacritty/alacritty.yml"]
+  ]
+
+[tasks.gpg]
+  links = [
+    ["${HM_DEST}/.config/fish/conf.d/", "gpg/gpg.fish"]
+  ]
+
+[tasks.osx]
+  links = [
+    ["${HM_DEST}/.config/fish/conf.d/", "osx/homebrew_grep.fish"]
   ]
 
 [tasks.ag]
@@ -72,14 +104,54 @@
     ["${HM_DEST}/.agignore", "ag/agignore.symlink"]
   ]
 
+[tasks.delta]
+  cmds = [["@install", "git-delta"]]
+
+[tasks.bat]
+  cmds = [["@install", "bat"]]
+  links = [
+    ["${HM_DEST}/.config/fish/functions/cat.fisha", "bat/cat.fish"]
+  ]
+
+[tasks.exa]
+  cmds = [["@install", "exa"]]
+  links = [
+    ["${HM_DEST}/.config/fish/functions/ls.fish", "exa/ls.fish"],
+    ["${HM_DEST}/.config/fish/functions/la.fish", "exa/la.fish"],
+    ["${HM_DEST}/.config/fish/functions/lla.fish", "exa/lla.fish"],
+    ["${HM_DEST}/.config/fish/functions/lt.fish", "exa/lt.fish"]
+  ]
+
 [tasks.jump]
   cmds = [["@install", "zoxide"]]
+  links = [
+    ["${HM_DEST}/.config/fish/functions/j.fish", "zoxide/j.fish"]
+  ]
+
+[tasks.fish]
+  cmds = [["@install", "fish"]]
 
 [tasks.shell]
-  deps = ["jump"]
+  deps = ["fish", "jump"]
+  cmds = [["@mkdirp", "${HM_DEST}/.config/fish"]]
   links = [
-    ["${HM_DEST}/.zshrc", "zsh/zshrc.symlink"]
+    ["${HM_DEST}/.config/fish/config.fish", "fish/config.fish.symlink"],
+    ["${HM_DEST}/.config/fish/functions/reload.fish", "fish/reload.fish"]
   ]
+
+[tasks.fisher]
+  deps = ["shell"]
+  cmds = [["source fisher/fisher.fish && fisher install jorgebucaran/fisher"]]
+
+[tasks.fisher-link-plugins-list]
+  deps = ["fisher"]
+  links = [
+  ["${HM_DEST}/.config/fish/fish_plugins", "fisher/plugins.symlink"]
+]
+
+[tasks.fisher-plugins]
+  deps = ["fisher-link-plugins-list"]
+  cmds = [["fisher", "update"]]
 
 [tasks.tmux]
   deps = [["@install", "tmux"]]
@@ -88,9 +160,35 @@
     ["${HM_DEST}/.tmux/plugins", "tmux/plugins"],
   ]
 
+[tasks.pwgen]
+  cmd = [["@install", "pwgen"]]
+  links = [
+    ["${HM_DEST}/.config/fish/functions/getpass.fish", "pwgen/getpass.fish"]
+  ]
+
+[tasks.locale]
+  links = [
+    ["${HM_DEST}/.config/fish/conf.d/locale.fish", "locale/locale.fish"]
+]
+
 [tasks.topgrade]
   deps = [["@install", "topgrade"]]
 
 
 [tasks.default]
-  deps = ["dev", "tmux", "ag", "vim", "shell", "alacritty", "topgrade"]
+  deps = [
+    "dev",
+    "osx",
+    "pwgen",
+    "tmux",
+    "ag",
+    "bat",
+    "exa",
+    "delta",
+    "vim",
+    "shell",
+    "fisher-plugins",
+    "locale",
+    "alacritty",
+    "topgrade"
+  ]

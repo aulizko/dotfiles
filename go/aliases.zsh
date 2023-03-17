@@ -1,1 +1,0 @@
-alias migr='migrate create -ext sql -dir migrations -seq -digits 10'

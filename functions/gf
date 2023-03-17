@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# credit https://github.com/holman/dotfiles/blob/master/functions/gf
-gf() {
-  local branch=$1
-  git checkout -b $branch origin/$branch
-}
