@@ -45,9 +45,9 @@
 [tasks.git]
   cmds = [["@install", "git"]]
   links = [
-    ["${HM_DEST}/.gitconfig", "git/gitconfig.symlink"],
-    ["${HM_DEST}/.gitattributes", "git/gitattributes.symlink"],
-    ["${HM_DEST}/.gitignore_global", "git/gitignore_global.symlink"],
+    ["${HM_DEST}/.gitconfig", "git/gitconfig"],
+    ["${HM_DEST}/.gitattributes", "git/gitattributes"],
+    ["${HM_DEST}/.gitignore_global", "git/gitignore_global"],
     ["${HM_DEST}/.config/fish/functions/", "git/fish/*.fish"]
   ]
 
@@ -68,7 +68,7 @@
 [tasks.node]
   cmds = [["@install", "nodejs", "npm"]]
   links = [
-    ["${HM_DEST}/.eslintrc.json", "node/eslintrc.json.symlink"],
+    ["${HM_DEST}/.eslintrc.json", "node/eslintrc.json"],
   ]
 
 [tasks.vim]
@@ -101,7 +101,7 @@
 [tasks.ag]
   cmds = [["@install", "the_silver_searcher"]]
   links = [
-    ["${HM_DEST}/.agignore", "ag/agignore.symlink"]
+    ["${HM_DEST}/.agignore", "ag/agignore"]
   ]
 
 [tasks.delta]
@@ -135,7 +135,7 @@
   deps = ["fish", "jump"]
   cmds = [["@mkdirp", "${HM_DEST}/.config/fish"]]
   links = [
-    ["${HM_DEST}/.config/fish/config.fish", "fish/config.fish.symlink"],
+    ["${HM_DEST}/.config/fish/config.fish", "fish/config.fish"],
     ["${HM_DEST}/.config/fish/functions/reload.fish", "fish/reload.fish"]
   ]
 
@@ -146,7 +146,7 @@
 [tasks.fisher-link-plugins-list]
   deps = ["fisher"]
   links = [
-  ["${HM_DEST}/.config/fish/fish_plugins", "fisher/plugins.symlink"]
+  ["${HM_DEST}/.config/fish/fish_plugins", "fisher/plugins"]
 ]
 
 [tasks.fisher-plugins]
