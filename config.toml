@@ -82,12 +82,6 @@
     ["${HM_DEST}/.config/fish/functions/", "vim/*.fish"]
   ]
 
-[tasks.alacritty]
-  cmds = [["@install-cask", "alacritty"], ["@mkdirp", "${HM_DEST}/.config/alacritty"]]
-  links = [
-    ["${HM_DEST}/.config/alacritty/alacritty.yml", "alacritty/alacritty.yml"]
-  ]
-
 [tasks.gpg]
   links = [
     ["${HM_DEST}/.config/fish/conf.d/", "gpg/gpg.fish"]
@@ -189,6 +183,5 @@
     "shell",
     "fisher-plugins",
     "locale",
-    "alacritty",
     "topgrade"
   ]
