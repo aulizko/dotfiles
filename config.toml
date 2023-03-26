@@ -17,7 +17,7 @@
 
 [macros.go-get]
   deps = ["golang"]
-  prefix = ["go", "get"]
+  prefix = ["go", "install"]
 
 [macros.npm-install]
   deps = ["node"]
