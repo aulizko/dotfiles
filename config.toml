@@ -23,6 +23,10 @@
   deps = ["node"]
   prefix = ["sudo", "npm", "install", "-g"]
 
+[macros.cargo-install]
+  deps = ["rust"]
+  prefix = ["cargo", "install"]
+
 [macros.mkdirp]
   prefix = ["mkdir", "-p"]
 
@@ -31,7 +35,7 @@
 #
 
 [tasks.dev]
-  deps = ["golang", "git", "vim", "node", "openjdk", "sqlite"]
+  deps = ["git", "vim", "node", "openjdk", "sqlite", "golang", "rust"]
   cmds = [
     ["@install", "cmake", "tmux"],
   ]
@@ -58,6 +62,9 @@
     ["${HM_DEST}/.config/fish/conf.d/golang.fish", "go/golang.conf.fish"],
     ["${HM_DEST}/.config/fish/conf.d/golang_private.fish", "go/golang_private.conf.fish"]
   ]
+
+[tasks.rust]
+  cmds = [["@install", "rustup-init"]]
 
 [tasks.openjdk]
   cmds = [["@install", "openjdk"]]
@@ -112,14 +119,20 @@
   links = [
     ["${HM_DEST}/.config/fish/functions/ls.fish", "exa/ls.fish"],
     ["${HM_DEST}/.config/fish/functions/la.fish", "exa/la.fish"],
-    ["${HM_DEST}/.config/fish/functions/lla.fish", "exa/lla.fish"],
-    ["${HM_DEST}/.config/fish/functions/lt.fish", "exa/lt.fish"]
+    ["${HM_DEST}/.config/fish/functions/lla.fish", "exa/lla.fish"]
   ]
 
 [tasks.jump]
   cmds = [["@install", "zoxide"]]
   links = [
     ["${HM_DEST}/.config/fish/functions/j.fish", "zoxide/j.fish"]
+  ]
+
+[tasks.erdtree]
+  cmds = [["@mkdirp", "${HM_DEST}/.config/erdtree"], ["@cargo-install", "erdtree"]]
+  links = [
+    ["${HM_DEST}/.config/erdtree/.erdtreerc", "erdtree/.erdtreerc"],
+    ["${HM_DEST}/.config/fish/functions/lt.fish", "erdtree/lt.fish"]
   ]
 
 [tasks.fish]
@@ -171,6 +184,7 @@
 
 [tasks.default]
   deps = [
+    "locale",
     "dev",
     "osx",
     "pwgen",
@@ -182,6 +196,6 @@
     "vim",
     "shell",
     "fisher-plugins",
-    "locale",
+    "erdtree",
     "topgrade"
   ]
