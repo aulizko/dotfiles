@@ -52,7 +52,7 @@
     ["${HM_DEST}/.gitconfig", "git/gitconfig"],
     ["${HM_DEST}/.gitattributes", "git/gitattributes"],
     ["${HM_DEST}/.gitignore_global", "git/gitignore_global"],
-    ["${HM_DEST}/.config/fish/functions/", "git/fish/*.fish"]
+    ["${HM_DEST}/.config/fish/conf.d/", "git/fish/git.fish"]
   ]
 
 [tasks.golang]
